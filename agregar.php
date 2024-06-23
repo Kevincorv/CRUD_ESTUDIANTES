@@ -86,7 +86,7 @@
 
             if ($conn->query($sql) === TRUE) {
                 echo "<div class='alert alert-success mt-3'>Nuevo registro creado exitosamente</div>";
-                header("Location: index.html");
+                header("Location: index.php");
                 exit();
             } else {
                 echo "<div class='alert alert-danger mt-3'>Error: " . $sql . "<br>" . $conn->error . "</div>";

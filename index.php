@@ -1,8 +1,8 @@
 <?php 
 include('conexion.php'); 
 ?>
-<!DOCTYPE html>
-<html lang="es">
+<!DOCTYPE php>
+<php lang="es">
 <head>
     <meta charset="UTF-8">
     <title>Registro de Estudiantes</title>
@@ -18,7 +18,7 @@ include('conexion.php');
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="index.html">Lista de Estudiantes</a>
+                <a class="nav-link" href="index.php">Lista de Estudiantes</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="agregar.php">Agregar Estudiante</a>
@@ -80,4 +80,4 @@ include('conexion.php');
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </body>
-</html>
+</php>

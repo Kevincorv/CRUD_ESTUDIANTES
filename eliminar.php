@@ -7,7 +7,7 @@ $sql = "DELETE FROM estudiantes WHERE id=$id";
 
 if ($conn->query($sql) === TRUE) {
     echo "<div class='alert alert-success mt-3'>Registro eliminado exitosamente</div>";
-    header("Location: index.html");
+    header("Location: index.php");
     exit();
 } else {
     echo "<div class='alert alert-danger mt-3'>Error eliminando el registro: " . $conn->error . "</div>";
