@@ -4,12 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <title>Registro de Estudiantes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
     <a class="navbar-brand" href="#">CRUD ESTUDIANTES</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
             <li class="nav-item">
@@ -22,10 +26,10 @@
     </div>
 </nav>
 
-<div class="container">
-    <h1 class="mt-5">Lista de Estudiantes</h1>
+<div class="container mt-5">
+    <h1 class="mb-4">Lista de Estudiantes</h1>
     <div class="table-responsive">
-        <table class="table table-bordered" style="width: 100%;">
+        <table class="table table-bordered">
             <thead class="thead-dark">
                 <tr>
                     <th>ID</th>
@@ -65,5 +69,10 @@
             </tbody>
         </table>
     </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </body>
 </html>
