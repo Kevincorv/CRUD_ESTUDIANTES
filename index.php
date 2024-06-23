@@ -1,11 +1,10 @@
-<?php 
-include('conexion.php'); 
-?>
-<!DOCTYPE php>
-<php lang="es">
+<?php include('conexion.php'); ?>
+<!DOCTYPE html>
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <title>Registro de Estudiantes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -27,10 +26,10 @@ include('conexion.php');
     </div>
 </nav>
 
-<div class="container">
-    <h1 class="mt-5">Lista de Estudiantes</h1>
+<div class="container mt-5">
+    <h1 class="mb-4">Lista de Estudiantes</h1>
     <div class="table-responsive">
-        <table class="table table-bordered" style="width: 100%;">
+        <table class="table table-bordered">
             <thead class="thead-dark">
                 <tr>
                     <th>ID</th>
@@ -47,28 +46,24 @@ include('conexion.php');
             <tbody>
                 <?php
                 $resultado = $conn->query("SELECT * FROM estudiantes");
-                if ($resultado->num_rows > 0) {
-                    while ($fila = $resultado->fetch_assoc()) {
-                        $fecha_nacimiento = new DateTime($fila['fecha_nacimiento']);
-                        $hoy = new DateTime('today');
-                        $edad = $fecha_nacimiento->diff($hoy)->y;
-                        echo "<tr>
-                                <td>{$fila['id']}</td>
-                                <td>{$fila['nombre_completo']}</td>
-                                <td>{$fila['fecha_nacimiento']}</td>
-                                <td>{$fila['genero']}</td>
-                                <td>{$fila['carrera']}</td>
-                                <td>{$fila['materias_cursadas']}</td>
-                                <td>{$fila['telefono']}</td>
-                                <td>{$edad}</td>
-                                <td>
-                                    <a href='editar.php?id={$fila['id']}' class='btn btn-warning btn-sm'>MODIFICAR</a>
-                                    <a href='eliminar.php?id={$fila['id']}' class='btn btn-danger btn-sm'>ELIMINAR</a>
-                                </td>
-                            </tr>";
-                    }
-                } else {
-                    echo "<tr><td colspan='9' class='text-center'>No hay estudiantes registrados.</td></tr>";
+                while ($fila = $resultado->fetch_assoc()) {
+                    $fecha_nacimiento = new DateTime($fila['fecha_nacimiento']);
+                    $hoy = new DateTime('today');
+                    $edad = $fecha_nacimiento->diff($hoy)->y;
+                    echo "<tr>
+                            <td>{$fila['id']}</td>
+                            <td>{$fila['nombre_completo']}</td>
+                            <td>{$fila['fecha_nacimiento']}</td>
+                            <td>{$fila['genero']}</td>
+                            <td>{$fila['carrera']}</td>
+                            <td>{$fila['materias_cursadas']}</td>
+                            <td>{$fila['telefono']}</td>
+                            <td>{$edad}</td>
+                            <td>
+                                <a href='editar.php?id={$fila['id']}' class='btn btn-warning btn-sm'>MODIFICAR</a>
+                                <a href='eliminar.php?id={$fila['id']}' class='btn btn-danger btn-sm'>ELIMINAR  </a>
+                            </td>
+                        </tr>";
                 }
                 ?>
             </tbody>
@@ -77,7 +72,7 @@ include('conexion.php');
 </div>
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </body>
-</php>
+</html>
